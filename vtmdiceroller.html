@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTM V5 Dice Roller</title>
+    <link rel = "stylesheet" href = "vtmdiceroller.css">
+</head>
+<body>
+    <h1>VtM V5 Dice Roller!</h1>
+    <h2>Purpose:</h2>
+    <p>This is a dice roller for the Vampire: the Masquerade V5 table-top roleplaying game.</p>
+    <h2>Instructions:</h2>
+    <p>Enter your total pool, your character's hunger, and the difficulty of the roll (if known) into the labeled text inputs, then press the button.</p>
+    <h2>The Roller:</h2>
+    <form id = "dice-roller">
+        <label> Total dice in pool--sum the relevant attribute and skill with any relevant modifiers.
+            <input type = "number" placeholder ="Total pool here." id = "total-pool">
+        </label>
+        <label>Hunger level--your vampire's current hunger from one to five.
+            <input type = "number" placeholder = "Hunger here." id = "hunger">
+        </label>
+        <label>Difficulty--the difficulty set for a task, generally by the Storyteller. Enter 0 if unknown.
+            <input type = "number" placeholder = "Difficulty here." id = "difficulty">
+        </label>
+        <button id = "dice-roller-submit">Roll!</button>
+    </form>
+    <h2>Roll Results:</h2>
+    <div id = "roll-results"></div>
+    <script src = "vtmdiceroller.js"></script>
+</body>
+</html>

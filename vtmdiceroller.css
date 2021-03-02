@@ -1,0 +1,9 @@
+input{
+    display: block;
+    margin: 10px
+}
+
+body{
+    background-color:rgb(59, 59, 59);
+    color: rgb(207, 207, 207)
+}
