@@ -1,8 +1,6 @@
 //First, a function to roll 1 die with sides number of sides.
 
-function dx(sides){
-    return (Math.floor((Math.random() * sides)) + 1)
-}
+const dx = sides => (Math.ceil((Math.random() * sides)))
 
 
 //Second, a function to roll num dice with sides number of sides.
