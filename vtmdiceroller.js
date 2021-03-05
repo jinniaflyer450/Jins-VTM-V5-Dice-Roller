@@ -87,19 +87,19 @@ function getConvertedRollResults(totalPool, hunger){
 function v5Roll(totalPool, hunger, diff){
     let totalResults = getConvertedRollResults(totalPool, hunger)
     if(totalResults.success >= diff && totalResults.messyCrit){
-        return `Messy Critical--${totalResults.success} successes against a difficulty of ${diff}.`
+        return `Messy Critical--${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else if(totalResults.success >= diff && totalResults.normalCrit){
-        return `Normal Critical--${totalResults.success} successes against a difficulty of ${diff}.`
+        return `Normal Critical--${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else if(totalResults.success >= diff){
-        return `Success--${totalResults.success} successes against a difficulty of ${diff}.`
+        return `Success--${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else if(totalResults.success < diff && totalResults.bestial){
-        return `Bestial Failure--${totalResults.success} successes against a difficulty of ${diff}.`
+        return `Bestial Failure--${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else{
-        return `Failure--${totalResults.success} successes against a difficulty of ${diff}.`
+        return `Failure--${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
 }
 
