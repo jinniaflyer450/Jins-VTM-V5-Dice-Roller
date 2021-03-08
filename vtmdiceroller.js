@@ -75,11 +75,14 @@ function getConvertedRollResults(totalPool, hunger){
     totalResults.success = convertedNormalResults.success + convertedHungerResults.success
     if(totalCrits > 1 && convertedHungerResults.potMess > 0){
         totalResults.messyCrit = true
-        totalResults.success += (2*(totalCrits - totalCrits%2))
+        totalResults.success += (2*(totalCrits - totalCrits%2)) + totalCrits%2
     }
     else if(totalCrits > 1){
         totalResults.normalCrit = true
-        totalResults.success += (2*(totalCrits - totalCrits%2))
+        totalResults.success += (2*(totalCrits - totalCrits%2)) + totalCrits%2
+    }
+    else if(totalCrits === 1){
+        totalResults.success += totalCrits
     }
     return totalResults
 }
