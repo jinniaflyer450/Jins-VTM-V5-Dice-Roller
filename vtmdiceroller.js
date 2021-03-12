@@ -90,25 +90,27 @@ function getConvertedRollResults(totalPool, hunger){
     else if(totalCrits === 1){
         totalResults.success += totalCrits
     }
+    totalResults.rawNormalResults = rawNormalResults
+    totalResults.rawHungerResults = rawHungerResults
     return totalResults
 }
 
 function v5Roll(totalPool, hunger, diff){
     let totalResults = getConvertedRollResults(totalPool, hunger)
     if(totalResults.success >= diff && totalResults.messyCrit){
-        return `Messy Critical--rolled ${rawNormalResults} on normal dice and ${rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
+        return `Messy Critical--rolled ${totalResults.rawNormalResults} on normal dice and ${totalResults.rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else if(totalResults.success >= diff && totalResults.normalCrit){
-        return `Normal Critical--rolled ${rawNormalResults} on normal dice and ${rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
+        return `Normal Critical--rolled ${totalResults.rawNormalResults} on normal dice and ${totalResults.rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else if(totalResults.success >= diff){
-        return `Success--rolled ${rawNormalResults} on normal dice and ${rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
+        return `Success--rolled ${totalResults.rawNormalResults} on normal dice and ${totalResults.rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else if(totalResults.success < diff && totalResults.bestial){
-        return `Bestial Failure--rolled ${rawNormalResults} on normal dice and ${rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
+        return `Bestial Failure--rolled ${totalResults.rawNormalResults} on normal dice and ${totalResults.rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
     else{
-        return `Failure--rolled ${rawNormalResults} on normal dice and ${rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
+        return `Failure--rolled ${totalResults.rawNormalResults} on normal dice and ${totalResults.rawHungerResults} on Hunger dice, translating to ${totalResults.success} success(es) against a difficulty of ${diff}.`
     }
 }
 
